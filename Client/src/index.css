@@ -1,0 +1,224 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4; /* Light gray background */
+  color: #333; /* Dark gray text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.app {
+  width: 100%;
+  max-width: 100vw; /* Max width is now 100% of the viewport width */
+  height: 90vh;
+  background: #ffffff; /* White background */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Lighter shadow */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  padding: 1rem;
+  background: #f1f1f1; /* Light gray background */
+  border-bottom: 1px solid #ddd; /* Light gray border */
+  text-align: center;
+}
+
+.header h1 {
+  margin: 0;
+  color: #333; /* Dark gray text */
+}
+
+.chat-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  width: 1000px; /* Fixed width for the chat container */
+}
+
+.chat-window {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  background: #f9f9f9; /* Very light gray background */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+}
+
+.placeholder {
+  text-align: center;
+  color: #888; /* Medium gray */
+}
+
+.search-result {
+  width: 100%;
+}
+
+.message-container {
+  display: flex;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+
+.message-container.user {
+  justify-content: flex-end;
+}
+
+.message-container.model {
+  justify-content: flex-start;
+}
+
+.chat-item {
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  max-width: 60%;
+  word-wrap: break-word;
+}
+
+.chat-item.user {
+  background: #e0e0e0; /* Light gray background */
+  color: #333; /* Dark gray text */
+  border-top-right-radius: 0;
+}
+
+.chat-item.model {
+  background: #5eabfc; /* Light blue background */
+  color: #333; /* Dark gray text */
+  border-top-left-radius: 0;
+}
+
+.answer {
+  margin: 0;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background: #f1f1f1; /* Light gray background */
+  border-top: 1px solid #ddd; /* Light gray border */
+}
+
+.input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 20px;
+  background: #ffffff; /* White background */
+  color: #333; /* Dark gray text */
+  margin-right: 0.5rem;
+}
+
+.ask-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #007bff; 
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.clear-button, .surprise {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #007bff;
+  color: white;
+  transition: background 0.3s ease;
+}
+
+.ask-button:disabled, .clear-button:disabled, .surprise:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.ask-button:hover:not(:disabled) {
+  background: #f9fafb;
+  color: #333;
+}
+
+.clear-button:hover:not(:disabled), .surprise:hover:not(:disabled) {
+  background: white ;
+  text: #333;
+}
+
+.error {
+  color: #ff4d4d;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.loading-dots {
+  display: none; /* Hide the dots */
+}
+
+.fetching-response {
+  color: #888; /* A lighter grey color for the fetching message */
+  font-style: italic;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: #ffffff; /* White background */
+  color: #333; /* Dark gray text */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  position: relative;
+}
+
+.popup h2 {
+  margin-top: 0;
+}
+
+.popup-next {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.popup-next:hover {
+  background: #f9f9fa;
+  color: #333; 
+}
+
+.popup-close {
+  background: #ff4d4d;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
