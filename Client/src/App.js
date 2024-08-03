@@ -53,7 +53,7 @@ const App = () => {
           'Content-Type': 'application/json',
         },
       };
-      const response = await fetch('https://gem-server.vercel.app/gemini', options);
+      const response = await fetch('link-to-server/gemini', options);
       if (!response.ok) {
         throw new Error('Network response was not ok');
       }
