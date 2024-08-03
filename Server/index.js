@@ -8,7 +8,7 @@ const port = 8000; // Use lowercase 'port' for consistency
 app.use(cors());
 app.use(express.json());
 
-const genAI = new GoogleGenerativeAI("AIzaSyAd9NjkQhMDmj-YcA-y9CEcBcgBKYxk_D8");
+const genAI = new GoogleGenerativeAI("API_KEY");
 
 // Root route
 app.get('/', (req, res) => {
